@@ -18,17 +18,19 @@ describe("Class:Addition operator,two arguments",()=>{
   
     });
   
-    it("Summing up two numbers.test3",()=>{
-      var num1=4;
-      var num2=5;
-      var sum=addTwoNumbers(num1,num2);
+    fit("Summing up two numbers.test3",()=>{
+      
+      var arr=[4,5];
+      const objCalculator= new cCalculator(arr);
+      var sum=objCalculator.addTwoNumbers();
       expect(sum).toBe(9);
   
     });
     
     it("Summing multiply numbers",()=>{
       var arr=[1,2,3,4];
-      var sum=sumNumbers(arr);
+      const objCalculator= new cCalculator(arr);
+      var sum=objCalculator.addTwoNumbers();
       expect(sum).toBe(10);
   
     });

@@ -3,18 +3,16 @@ class cCalculator{
  constructor(arr){
   this.arr=arr;
   this.length=arr.length;
-  this.sum1=0
-  this.sum2=1;
-  this.product=1;
-
+  
  }
 
 
 // function for summing up two numbers
 addTwoNumbers()
 {
- this.sum1=this.arr[0]+this.arr[1];
-return this.sum1;
+    var sum=0
+ sum=this.arr[0]+this.arr[1];
+return sum;
 
 }
 
@@ -22,21 +20,22 @@ return this.sum1;
 // Sum up multiple numbers 
 sumNumbers()
 {
-
+    var sum=0
     for(let i=0;i<this.length;i++)
     {
-        this.sum1+=this.arr[i];
+        sum+=this.arr[i];
     }
 
-    return this.sum1;
+    return sum;
 }
 
 
 // function for multiplying two numbers
-multiplyTwoNum(a,b)
+multiplyTwoNum()
 {
-     this.product=this.arr[0]*this.arr[1];
-    return this.product;
+    var product=1;
+     product=this.arr[0]*this.arr[1];
+    return sproduct;
 }
 
 
@@ -44,12 +43,13 @@ multiplyTwoNum(a,b)
 multiplyMultNums()
 {
   
+    var product=1;
   for(let i=0;i<this.length;i++)
   {
-      this.product=this.product*this.arr[i];
+      product=product*this.arr[i];
   }
 
-  return this.product;
+  return product;
 
 }
 
