@@ -1,56 +1,43 @@
 class cCalculator{
 
- constructor(arr){
-  this.arr=arr;
-  this.length=arr.length;
+ constructor(){
   
+  this.lastA=0;
+  this.lastM=0;
  }
-
-
-// function for summing up two numbers
-addTwoNumbers()
-{
-    var sum=0
- sum=this.arr[0]+this.arr[1];
-return sum;
-
-}
-
 
 // Sum up multiple numbers 
 sumNumbers()
 {
-    var sum=0
-    for(let i=0;i<this.length;i++)
+    var sum=0;
+    for(let i=0;i<arguments.length;i++)
     {
-        sum+=this.arr[i];
+        sum+=arguments[i];
     }
 
     return sum;
 }
 
-
-// function for multiplying two numbers
-multiplyTwoNum()
-{
-    var product=1;
-     product=this.arr[0]*this.arr[1];
-    return product;
-}
-
-
 // functions that multipl multiple numbers together
 multiplyMultNums()
 {
-  
-    var product=1;
-  for(let i=0;i<this.length;i++)
+  var product=1;
+  for(let i=0;i<arguments.length;i++)
   {
-      product=product*this.arr[i];
+      product=product*arguments[i];
   }
 
   return product;
 
 }
+
+
+last(){
+ this.lastA=this.sumNumbers();
+ this.lastM=this.multiplyMultNums();
+
+}
+
+
 
 }

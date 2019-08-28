@@ -1,55 +1,59 @@
 //Testing the functions for addintion of two and multiply numbers
-
-describe("Class:Addition operator,two arguments",()=>{
-    it("Summing up two numbers.test1",()=>{
-      var arr=[0,0];
-      const objCalculator= new cCalculator(arr);
-      var sum=objCalculator.addTwoNumbers();
-      expect(sum).toBe(0);
-  
-    });
-     
-    it("Summing up two numbers.test2",()=>{
-      
-      var arr=[-1,-1];
-      const objCalculator= new cCalculator(arr);
-      var sum=objCalculator.addTwoNumbers();
-      expect(sum).toBe(-2);
-  
-    });
-  
-    it("Summing up two numbers.test3",()=>{
-      
-      var arr=[4,5];
-      const objCalculator= new cCalculator(arr);
-      var sum=objCalculator.addTwoNumbers();
-      expect(sum).toBe(9);
-  
-    });
+describe("Class:Addition operator,two arguments", () => {
+  it("Summing up two numbers.test1", () => {
     
-    it("Summing multiply numbers",()=>{
-      var arr=[1,2,3,4];
-      const objCalculator= new cCalculator(arr);
-      var sum=objCalculator.sumNumbers();
-      expect(sum).toBe(10);
-  
-    });
-  
-    it("multiple two numbers",()=>{
-      var arr=[1,2];
-        
-        const objCalculator= new cCalculator(arr);
-        var product=objCalculator.multiplyTwoNum();
-        expect(product).toBe(2);
-  
-     });
-     it("multiply multiple numbers",()=>{
-         var arr=[1,2,3,4];
-         const objCalculator= new cCalculator(arr);
-
-         var product=objCalculator.multiplyMultNums();
-         expect(product).toBe(24);
-     })
-  
+    const objCalculator = new cCalculator();
+    var sum = objCalculator.sumNumbers(0,0);
+    expect(sum).toBe(0);
   });
-  
+
+  it("Summing up two numbers.test2", () => {
+    
+    const objCalculator = new cCalculator();
+    var sum = objCalculator.sumNumbers(-1,-1);
+    expect(sum).toBe(-2);
+  });
+
+  it("Summing up two numbers.test3", () => {
+    
+    const objCalculator = new cCalculator();
+    var sum = objCalculator.sumNumbers(4,5);
+    expect(sum).toBe(9);
+  });
+
+  it("Summing multiply numbers", () => {
+    
+    const objCalculator = new cCalculator();
+    var sum = objCalculator.sumNumbers(1,2,3,4);
+    expect(sum).toBe(10);
+
+  });
+
+  it("multiple two numbers", () => {
+    
+
+    const objCalculator = new cCalculator();
+    var product = objCalculator.multiplyMultNums(1,2);
+    expect(product).toBe(2);
+
+  });
+  it("multiply multiple numbers", () => {
+    
+    const objCalculator = new cCalculator();
+
+    var product = objCalculator.multiplyMultNums(1,2,3,4);
+    expect(product).toBe(24);
+  })
+
+   xit("returns the last numer",()=>{
+    
+    const objCalculator = new cCalculator();
+    var arr2=[objCalculator.lastA,4];
+    var sum = objCalculator.sumNumbers(1,2,3,4);
+    expect(sum).toBe(14);
+   })
+   
+
+
+
+});
