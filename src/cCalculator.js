@@ -35,7 +35,7 @@ multiplyTwoNum()
 {
     var product=1;
      product=this.arr[0]*this.arr[1];
-    return sproduct;
+    return product;
 }
 
 
