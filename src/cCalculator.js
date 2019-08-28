@@ -2,8 +2,7 @@ class cCalculator{
 
  constructor(){
   
-  this.lastA=0;
-  this.lastM=0;
+  this.arr=[];
  }
 
 // Sum up multiple numbers 
@@ -14,7 +13,7 @@ sumNumbers()
     {
         sum+=arguments[i];
     }
-
+  this.arr.push(sum);
     return sum;
 }
 
@@ -26,18 +25,8 @@ multiplyMultNums()
   {
       product=product*arguments[i];
   }
-
+ //this.arr.push(product);
   return product;
-
 }
-
-
-last(){
- this.lastA=this.sumNumbers();
- this.lastM=this.multiplyMultNums();
-
-}
-
-
 
 }

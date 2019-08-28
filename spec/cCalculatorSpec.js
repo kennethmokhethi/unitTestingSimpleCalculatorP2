@@ -45,12 +45,12 @@ describe("Class:Addition operator,two arguments", () => {
     expect(product).toBe(24);
   })
 
-   xit("returns the last numer",()=>{
+   it("returns the last numer",()=>{
     
     const objCalculator = new cCalculator();
-    var arr2=[objCalculator.lastA,4];
-    var sum = objCalculator.sumNumbers(1,2,3,4);
-    expect(sum).toBe(14);
+    
+    var sum = objCalculator.sumNumbers(objCalculator.arr[objCalculator.arr.length-1],6);
+    expect(sum).toBe(13);
    })
    
 
