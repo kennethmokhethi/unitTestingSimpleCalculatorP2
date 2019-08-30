@@ -30,9 +30,6 @@ describe("Class:Addition operator,two arguments", () => {
   });
 
   it("multiple two numbers", () => {
-    
-
-    // const objCalculator = new cCalculator();
     var product = objCalculator.multiplyMultNums(1,2);
     expect(product).toBe(2);
   });
@@ -43,17 +40,18 @@ describe("Class:Addition operator,two arguments", () => {
   });
    
 it("should return the last number",()=>{
-//  const objCalculator=new
 let lastN=objCalculator.last();
 expect(lastN).toBe(24); //from multiple spec that starts at line 40
 });
 
 it("Should set the slot",()=>{
- let setSlot=objCalculator.set_slot(1);
- expect(setSlot).toBe(24); //from multiple spec that starts at line 40
- 
+ let setSlot=objCalculator.set_slot(objCalculator.lastNumber);
+ expect(setSlot).toEqual([24]); //from multiple spec that starts at line 40
+ });
+
+it("Should return the slot by index",()=>{
+let slot=objCalculator.get_slot(0);
+expect(slot).toBe(24);
 });
-
-
 
 });

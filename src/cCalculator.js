@@ -37,14 +37,16 @@ last(){
 
 //setting the slot memory
 set_slot(x){
-  this.arr[x]=this.lastNumber;
-  return this.lastNumber;
+  // let count=0;
+  this.arr.push(x);
+  // count++;
+  return this.arr;
 }
 
 //return the slot
 get_slot(x){
-  this.arr[x].lastNumber;
-  return this.arr;
+  
+  return this.arr[x];
 
 }
 
