@@ -48,7 +48,11 @@ let lastN=objCalculator.last();
 expect(lastN).toBe(24); //from multiple spec that starts at line 40
 });
 
-it()
+it("Should set the slot",()=>{
+ let setSlot=objCalculator.set_slot(1);
+ expect(setSlot).toBe(24); //from multiple spec that starts at line 40
+ 
+});
 
 
 
