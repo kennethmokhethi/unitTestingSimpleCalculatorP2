@@ -3,6 +3,7 @@ class cCalculator{
  constructor(){
   
   this.arr=[];
+  this.lastNumber=0;
  }
 
 // Sum up multiple numbers 
@@ -13,7 +14,7 @@ sumNumbers()
     {
         sum+=arguments[i];
     }
-  this.arr.push(sum);
+  this.lastNumber=sum;
     return sum;
 }
 
@@ -25,8 +26,28 @@ multiplyMultNums()
   {
       product=product*arguments[i];
   }
- //this.arr.push(product);
+  this.lastNumber=product;
   return product;
 }
 
+//returns the last number
+last(){
+  return this.lastNumber;
 }
+
+//setting the slot memory
+set_slot(x){
+  this.arr[x]=this.lastNumber;
+  return this.lastNumber;
+}
+
+//return the slot
+get_slot(x){
+  this.arr[x].lastNumber;
+  return this.arr;
+
+}
+
+}
+
+let objCalculator = new cCalculator();
