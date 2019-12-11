@@ -1,48 +1,71 @@
-let objCalculator = require("../src/cCalculator");
+let calculator_instance = require("../src/cCalculator");
 //Testing the functions for addintion of two and multiply numbers
 describe("Class:Addition operator,two arguments", () => {
   it("Summing up two numbers.test1", () => {
-    var sum = objCalculator.sumNumbers(0, 0);
-    expect(sum).toBe(0);
+    let sum = calculator_instance.add(3, 5);
+    expect(sum).toBe(8);
   });
 
-  it("Summing up two numbers.test2", () => {
-    var sum = objCalculator.sumNumbers(-1, -1);
-    expect(sum).toBe(-2);
+  it("Should return 60", () => {
+    let sum = calculator_instance.multiply(30, 2);
+    expect(sum).toBe(60);
   });
 
-  it("Summing up two numbers.test3", () => {
-    var sum = objCalculator.sumNumbers(4, 5);
-    expect(sum).toBe(9);
-  });
-
-  it("Summing multiply numbers", () => {
-    var sum = objCalculator.sumNumbers(1, 2, 3, 4);
+  it("Add multiple arguments.Should return 10", () => {
+    let sum = calculator_instance.add(3, 5, 2);
     expect(sum).toBe(10);
   });
 
-  it("multiple two numbers", () => {
-    var product = objCalculator.multiplyMultNums(1, 2);
-    expect(product).toBe(2);
+  describe("Should remember last slot", () => {
+    it("Should return 3", () => {
+      let sum = calculator_instance.add(1, 2);
+      expect(sum).toBe(3);
+    });
+
+    it("Should return 3 as the last slot", () => {
+      let lastSlot = calculator_instance.last();
+      expect(lastSlot).toBe(3);
+    });
   });
 
-  it("multiply multiple numbers", () => {
-    var product = objCalculator.multiplyMultNums(1, 2, 3, 4);
-    expect(product).toBe(24);
+  describe("Use the last in other calculations", () => {
+    it("Should return 15", () => {
+      let res = calculator_instance.multiply("LAST", 5);
+    });
   });
 
-  it("should return the last number", () => {
-    let lastN = objCalculator.last();
-    expect(lastN).toBe(24); //from multiple spec that starts at line 40
-  });
+  describe("Memory slot", () => {
+    it("Should return 3", () => {
+      calculator_instance.add(1, 2);
+      calculator_instance.set_slot(1);
+      let value_in_slot = calculator_instance.get_slot(1);
+      expect(value_in_slot).toBe(3);
+    });
 
-  it("Should set the slot", () => {
-    let setSlot = objCalculator.set_slot(objCalculator.lastNumber);
-    expect(setSlot).toEqual([24]); //from multiple spec that starts at line 40
-  });
+    it("Should return 30", () => {
+      calculator_instance.add(10, 20);
+      calculator_instance.set_slot(2);
+      let value_in_slot = calculator_instance.get_slot(2);
+      expect(value_in_slot).toBe(30);
+    });
 
-  it("Should return the slot by index", () => {
-    let slot = objCalculator.get_slot(0);
-    expect(slot).toBe(24);
+    it("Should return 300", () => {
+      let sum = calculator_instance.add(100, 200);
+      expect(sum).toBe(300);
+    });
+
+    it("Should return the value in slot one which is 3", () => {
+      let slot1 = calculator_instance.get_slot(1);
+      expect(slot1).toBe(3);
+    });
+
+    it("It should return the value in slot 2 which is 30", () => {
+      let slot2 = calculator_instance.get_slot(2);
+      expect(slot2).toBe(30);
+    });
+
+    it("Should return the last value which is 300", () => {
+      expect(calculator_instance.last()).toBe(300);
+    });
   });
 });
