@@ -31,6 +31,7 @@ class cCalculator {
   // functions that multipl multiple numbers together
   multiply() {
     var product = 1;
+    // Extracting the number in the string
     if (typeof arguments[0] == "string") {
       if (arguments[0].match(/\d+/)) {
         let slot_num = arguments[0].match(/\d+/);
@@ -59,6 +60,7 @@ class cCalculator {
   //setting the slot memory
   set_slot(x) {
     this.arrSlot[x] = this.last();
+    return this.arrSlot[x];
   }
 
   //return the slot

@@ -35,16 +35,23 @@ describe("Class:Addition operator,two arguments", () => {
   });
 
   describe("Memory slots", () => {
-    it("Should return 3", () => {
+    it("Should return 3 using the set method", () => {
       calculator_instance.add(1, 2);
-      calculator_instance.set_slot(1);
+      let value_set = calculator_instance.set_slot(1);
+      expect(value_set).toBe(3);
+    });
+    it("Should return 3 using get_slot method", () => {
       let value_in_slot = calculator_instance.get_slot(1);
       expect(value_in_slot).toBe(3);
     });
 
-    it("Should return 30", () => {
+    it("Should return 30 using the set_slot method", () => {
       calculator_instance.add(10, 20);
-      calculator_instance.set_slot(2);
+      let value_in_slot = calculator_instance.set_slot(2);
+      expect(value_in_slot).toBe(30);
+    });
+
+    it("Should return return 30 using the get_slot method", () => {
       let value_in_slot = calculator_instance.get_slot(2);
       expect(value_in_slot).toBe(30);
     });
