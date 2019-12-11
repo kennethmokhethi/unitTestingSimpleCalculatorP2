@@ -34,7 +34,7 @@ describe("Class:Addition operator,two arguments", () => {
     });
   });
 
-  describe("Memory slot", () => {
+  describe("Memory slots", () => {
     it("Should return 3", () => {
       calculator_instance.add(1, 2);
       calculator_instance.set_slot(1);
@@ -66,6 +66,23 @@ describe("Class:Addition operator,two arguments", () => {
 
     it("Should return the last value which is 300", () => {
       expect(calculator_instance.last()).toBe(300);
+    });
+  });
+
+  describe("Use memory slot and LAST as argument", () => {
+    it("Should return 310", () => {
+      let sum = calculator_instance.add("LAST", 10);
+      expect(sum).toBe(310);
+    });
+
+    it("Should return 8", () => {
+      let sum = calculator_instance.add("SLOT_1", 5);
+      expect(sum).toBe(8);
+    });
+
+    it("Should return 60", () => {
+      let sum = calculator_instance.multiply("SLOT_2", 2);
+      expect(sum).toBe(60);
     });
   });
 });

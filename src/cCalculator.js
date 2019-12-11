@@ -8,6 +8,18 @@ class cCalculator {
   // Sum up multiple numbers
   add() {
     var sum = 0;
+    if (typeof arguments[0] == "string") {
+      if (arguments[0].match(/\d+/)) {
+        let slot_num = arguments[0].match(/\d+/);
+        slot_num = Number(slot_num);
+        sum = this.get_slot(slot_num) + arguments[1];
+        return sum;
+      }
+    }
+    if (arguments[0] == "LAST") {
+      sum = arguments[1] + this.last();
+      return sum;
+    }
     for (let i = 0; i < arguments.length; i++) {
       sum += arguments[i];
     }
@@ -18,6 +30,15 @@ class cCalculator {
   // functions that multipl multiple numbers together
   multiply() {
     var product = 1;
+    if (typeof arguments[0] == "string") {
+      if (arguments[0].match(/\d+/)) {
+        let slot_num = arguments[0].match(/\d+/);
+        slot_num = Number(slot_num);
+        product = this.get_slot(slot_num) * arguments[1];
+        return product;
+      }
+    }
+
     if (arguments[0] == "LAST") {
       product = arguments[1] * this.last();
       return product;
