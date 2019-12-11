@@ -8,6 +8,7 @@ class cCalculator {
   // Sum up multiple numbers
   add() {
     var sum = 0;
+    // Extracting the number in the string
     if (typeof arguments[0] == "string") {
       if (arguments[0].match(/\d+/)) {
         let slot_num = arguments[0].match(/\d+/);
@@ -57,8 +58,6 @@ class cCalculator {
 
   //setting the slot memory
   set_slot(x) {
-    // let count=0;
-    // this.arr.push(this.last());
     this.arrSlot[x] = this.last();
   }
 
